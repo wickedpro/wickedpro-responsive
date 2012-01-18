@@ -122,22 +122,22 @@ function bones_wpsearch($form) {
 
 /************* Theme Options ********************************************************************************************/
 
-$themename = "wickedresponsive";
+$themename = "Wicked Responsive";
 $shortname = "wickedresp";
 
 // Create theme options
 
 $options = array (
-
+			
 				array(	"name" => __('Twitter Username'),
 						"desc" => __('Your Twitter username, to be used on the social media links'),
-						"id" => $shortname."_twitter",
-						"std" => "AlexDenning",
+						"id" => $wicked."_twitter",
+						"std" => "wickedpro",
 						"type" => "text"),
 						
 				array(	"name" => __('Feedburner URL'),
 						"desc" => __("Copy and paste your Feedburner URL, ie --> http://feeds2.feedburner.com/nometech"),
-						"id" => $shortname."_feedburner",
+						"id" => $wicked."_feedburner",
 						"std" => __(""),
 						"type" => "textarea",
 						"options" => array(	"rows" => "5",
@@ -269,7 +269,7 @@ function mytheme_add_admin() {
                 foreach ($options as $value) {
                     if( isset( $_REQUEST[ $value['id'] ] ) ) { update_option( $value['id'], $_REQUEST[ $value['id'] ]  ); } else { delete_option( $value['id'] ); } }
 
-                header("Location: themes.php?page=theme-options.php&saved=true");
+                header("Location: themes.php?functions.php&reset=true");
                 die;
 
         } else if( 'reset' == $_REQUEST['action'] ) {
@@ -288,7 +288,8 @@ function mytheme_add_admin() {
         }
     }
 
-    add_theme_page($themename." Options", "Bibliteca Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
+add_menu_page($themename, $themename, 'administrator', basename(__FILE__), 'mytheme_admin');  
+# }  
 
 }
 
@@ -431,7 +432,6 @@ function mytheme_admin() {
 	</p>
 </form>
 
-<p>Biblioteca theme.</p>
 </div>
 <?php
 }

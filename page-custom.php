@@ -1,13 +1,12 @@
 <?php
 /*
-Template Name: Custom Page Example
+Template Name: Custom Page 
 */
 ?>
-
 <?php get_header(); ?>
 			
 			<div id="content">
-			
+				<?php echo $wicked_twitter;?>
 				<div id="inner-content" class="wrap clearfix">
 			
 					<div id="main" class="col620 left first clearfix" role="main">
@@ -55,7 +54,7 @@ Template Name: Custom Page Example
 						</article>
 						
 						<?php endif; ?>
-					
+				
 					</div> <!-- end #main -->
     				
 					<?php get_sidebar(); // sidebar 1 ?>
@@ -63,5 +62,6 @@ Template Name: Custom Page Example
 				</div> <!-- end #inner-content -->
     
 			</div> <!-- end #content -->
+
 
 <?php get_footer(); ?>
